@@ -13,6 +13,7 @@ public class SaqueModel extends ContaBancariaModel{
     }
     public void sacar(){
         this.setSaldoFinal(this.getSaldoAtual()-this.getValorFornecido());
+        this.setSaldoAtual(this.getSaldoFinal());
     }
 
 }

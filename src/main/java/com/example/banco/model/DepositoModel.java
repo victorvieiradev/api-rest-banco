@@ -15,5 +15,6 @@ public class DepositoModel extends  ContaBancariaModel{
 
     public void depositar() {
         this.setSaldoFinal(this.getSaldoAtual()+this.getValorFornecido());
+        this.setSaldoAtual(this.getSaldoFinal());
     }
 }

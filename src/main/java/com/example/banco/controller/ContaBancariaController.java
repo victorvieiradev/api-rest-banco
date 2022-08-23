@@ -41,7 +41,7 @@ public class ContaBancariaController {
     public ContaBancariaModel depositar(@RequestBody DadosContaModel dados ){
         return contaBancariaService.depositar(dados);
     }
-    @PostMapping(path = "/sacar")
+    @PutMapping(path = "/sacar/{id}")
     public ContaBancariaModel sacar(@RequestBody DadosContaModel dados ){
         return contaBancariaService.sacar(dados);
     }
