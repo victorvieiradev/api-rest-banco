@@ -1,14 +1,10 @@
 package com.example.banco.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-@Getter
-@Setter
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -20,9 +16,9 @@ public abstract class ContaBancariaModel {
     private String agencia;
     private String numero;
     private String titular;
-    private BigDecimal saldoAtual;
-    private BigDecimal saldoFinal;
-    private BigDecimal valorFornecido;
+    private double saldoAtual;
+    private double saldoFinal;
+    private double valorFornecido;
     private String servico;
 
     public ContaBancariaModel(Long id, String agencia, String numero, String titular) {
@@ -30,12 +26,12 @@ public abstract class ContaBancariaModel {
         this.agencia = agencia;
         this.numero = numero;
         this.titular = titular;
-        this.saldoAtual = new BigDecimal("0.0");
-        this.saldoFinal = new BigDecimal("0.0");
-        this.valorFornecido = new BigDecimal("0.0");
+        this.saldoAtual = 0;
+        this.saldoFinal = 0;
+        this.valorFornecido = 0;
     }
 
-    public ContaBancariaModel(Long id, String agencia, String numero, String titular, BigDecimal valorFornecido, String servico) {
+    public ContaBancariaModel(Long id, String agencia, String numero, String titular, double valorFornecido, String servico) {
         this.id = id;
         this.agencia = agencia;
         this.numero = numero;
